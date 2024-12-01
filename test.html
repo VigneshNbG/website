@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect</title>
+    <script>
+        var txt = "Resource Persons"; // The text to type out
+        var i = 0; // Index for the current character
+        var speed = 50; // Speed of typing effect
+
+        function start() {
+            if (i < txt.length) {
+                document.getElementById("txt").innerHTML += txt.charAt(i); // Append the current character
+                i++; // Move to the next character
+                setTimeout(start, speed); // Call start again after a delay
+            }
+        }
+
+        // Start the typing effect when the page loads
+        window.onload = function() {
+            start();
+        };
+    </script>
+</head>
+<body>
+
+<p id="txt"></p> <!-- Paragraph where the typing effect will be displayed -->
+
+</body>
+</html>

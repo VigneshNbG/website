@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub workshop</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/js/fontawesome-iconpicker.min.js"
+    integrity="sha512-7dlzSK4Ulfm85ypS8/ya0xLf3NpXiML3s6HTLu4qDq7WiJWtLLyrXb9putdP3/1umwTmzIvhuu9EW7gHYSVtCQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Stylish&display=swap');
+
+    * {
+      margin: 0;
+      border: 0;
+      border: border-box;
+      outline: 0;
+      overflow-x: none;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      z-index: 0;
+      transition: none;
+
+    }
+
+    body {
+      z-index: 1;
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+    }
+
+    @font-face {
+      font-family: "wedding";
+      src: url("F:\Veerendra\code\c-programmimg\Wedding-18394239\Wedding Script.ttf");
+    }
+
+    .header {
+      /* background-color:aqua; */
+      height: 80px;
+      display: flex;
+
+    }
+
+    .navbar {
+      /* background-color: pink; */
+      width: 25%;
+      margin-left: 65vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+
+    }
+
+    .navbar a {
+      /* background-color:pink; */
+      border: 2px solid white;
+      border-radius: 10px;
+      text-decoration: none;
+      padding: 3px 10px 3px 10px;
+      color: white;
+    }
+
+    a:hover {
+      color: rgb(229, 229, 229);
+      text-shadow: 0.5px 0.5px 0px greenyellow;
+      box-shadow: 1.5px 1.5px 8px white;
+    }
+
+
+
+    .logo {
+      background-color: white;
+      margin-left: 20px;
+      margin-top: 34px;
+      border-radius: 50%;
+
+    }
+
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 45%;
+      overflow: hidden;
+    }
+
+    .circular-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .hover-content {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: left 0.5s ease;
+      text-align: center;
+      font-size: 18px;
+      padding: 10px;
+      padding-top: 60px;
+      border-radius: 50%;
+    }
+
+    .image-wrapper:hover .hover-content {
+      left: 0;
+    }
+
+    .main-content {
+
+      padding-top: 4vh;
+      color: white;
+      font-size: 4rem;
+      font-family: 'Pinyon Script';
+      padding-left: 14vw;
+
+    }
+
+    .main-content p {
+      text-decoration: underline;
+      /* font-family: 'Pinyon Script'; */
+      /* font-family: "Pinyon Script", "Times New Roman"; */
+      font-family: 'serif';
+      font-weight: 400;
+      font-style: normal;
+
+    }
+
+    .pic {
+      /* background-color: pink; */
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8vh;
+      width: 78vw;
+      margin-left: -3vw;
+      /* padding-right:20px; */
+    }
+
+    .container {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    /* .txt{
+  font-family: "Stylish", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+    #txt2 {
+      margin-top: 18vh;
+      /* padding-left: -7px; */
+      font-size: 1.5rem;
+      font-family: 'Pinyon Script';
+
+    }
+
+    .res-det {
+      /* background-color: red; */
+      display: flex;
+      justify-content: space-between;
+      width: 80vw;
+      margin-left: -45px;
+      padding: 4vh 0 0 0;
+    }
+
+
+    .details {
+
+      /* height: 5vh; */
+      width: 22vw;
+      /* background-color: pink; */
+      border: 2px solid white;
+      border-radius: 25px;
+      font-family: "pinyon";
+      font-size: 15px;
+      padding: 15px 10px 10px 0px;
+
+    }
+
+    .dt2 p {
+      font-family: "serif";
+      color: pink;
+      text-decoration: none;
+    }
+
+    .main {
+      height: 110vh;
+      background-image: url("b3.avif");
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('b3.avif');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .page2 {
+      width: 100%;
+      height: 100vh;
+      margin-top: 15px;
+      background-image: url("c7.png");
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('c7.png');
+      /* top: 100%;    */
+      transition: top 0.5s ease;
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* overflow-x: hidden; */
+    }
+
+    .cont2 {
+      /* background-color: pink; */
+      width: 100%;
+      height: 20vh;
+      padding-top: 100px;
+      padding-left: 550px;
+
+    }
+
+
+
+
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 15px;
+      gap: 15px;
+      background-color: #181717;
+      outline: 2px white solid;
+      outline-offset: -3px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: 400ms;
+      /* margin:200px 0px 400px 0px; */
+    }
+
+    .button .text {
+      font-family: 'Pinyon Script';
+      color: white;
+      font-weight: 100;
+      font-size: 1em;
+      transition: 400ms;
+
+    }
+
+    .button svg path {
+      transition: 400ms;
+    }
+
+    .button:hover {
+      background-color: rgb(56, 53, 53);
+    }
+
+    .button:hover .text {
+      color: #181717;
+      /* background-color:transparent */
+    }
+
+    .button:hover svg path {
+      fill: #181717;
+    }
+
+    .git-cont {
+      color: white;
+    }
+
+    .git-cont {
+      margin-left: -330px;
+      margin-top: 60px;
+
+    }
+
+    th {
+      border: 2px solid white;
+      font-family: "serif";
+
+    }
+
+    td {
+      font-family: "serif";
+      text-align: center;
+      padding: 7px 0px 4px 3px;
+    }
+
+    .footer {
+
+      margin-top: 9.5rem;
+      margin-left: -50px;
+      color: white;
+      font-family: 'serif';
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <!-- <div class="logo"><img src="social.png" alt=""  height="45px" ></div> -->
+      <div class="logo" style="pointer-events: none;"><a href="https://github.com/"><img src="social.png" alt=""
+            height="45px"></a></div>
+      <div class="navbar">
+        <a hraef="#">Home</a>
+        <a href="#">Contact us</a>
+        <a href="#">Help</a>
+
+      </div>
+    </div>
+
+    <div class="main-content">
+      <p id="txt"></p>
+      <div class="pic">
+        <div class="container">
+          <div class="image-wrapper">
+            <img src="Pratheek Gowda.jpg" alt="Circular Image" class="circular-image">
+            <div class="hover-content">
+              <p>Pratheek gowda</p>
+            </div>
+          </div>
+        </div>
+        <h3 id="txt2">HELLO!</h3>
+        <div class="container">
+          <div class="image-wrapper">
+            <img src="Prajwalnew.jpg" alt="Circular Image" class="circular-image">
+            <div class="hover-content">
+              <p>Prajwal Kumbar</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="res-det">
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<script>
+  var txt = "Resource Persons";
+  var i = 0;
+  var speed = 100;
+
+  function start() {
+    if (i < txt.length) {
+      document.getElementById("txt").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(start, speed);
+    }
+  }
+  window.onload = function () {
+    start();
+  };
+</script>
+
+</html>
